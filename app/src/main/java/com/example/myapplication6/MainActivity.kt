@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.e("MainActivity","Oncreate")
         val activityMainBinding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
         activityMainBinding.button.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
