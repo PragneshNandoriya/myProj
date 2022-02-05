@@ -2,18 +2,15 @@ package com.example.myapplication6
 
 import android.graphics.Color
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.myapplication6.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -27,20 +24,20 @@ class MainActivity : AppCompatActivity() {
         val activityMainBinding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
         activityMainBinding.button.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity,"Button Click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this@MainActivity,"Button Click",Toast.LENGTH_SHORT).show()
             }
         })
 
         activityMainBinding.imageView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity,"Image Click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this@MainActivity,"Image Click",Toast.LENGTH_SHORT).show()
                 activityMainBinding.imageView.animate().setDuration(2000).rotation(360f).start()
             }
         })
 
         activityMainBinding.text.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity,"Text Click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this@MainActivity,"Text Click",Toast.LENGTH_SHORT).show()
 
             }
         })
@@ -55,9 +52,9 @@ class MainActivity : AppCompatActivity() {
         var const = Const(15)
         runBlocking {
             launch {
-                Log.e("ThreadName 5.", "${Thread.currentThread().name}" + "  " + System.currentTimeMillis())// launch a new coroutine and continue
+                Log.e("ThreadName 5.", Thread.currentThread().name + "  " + System.currentTimeMillis())// launch a new coroutine and continue
                 delay(500)
-                Log.e("ThreadName 6.", "${Thread.currentThread().name}" + "  " + System.currentTimeMillis())// non-blocking delay for 1 second (default time unit is ms)
+                Log.e("ThreadName 6.", Thread.currentThread().name + "  " + System.currentTimeMillis())// non-blocking delay for 1 second (default time unit is ms)
                 println("World!") // print after delay
                 val jobnew:Job = launch {
                     try {
