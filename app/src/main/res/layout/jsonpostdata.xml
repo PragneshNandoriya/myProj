@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+   <data>
+       <variable
+           name="postmodel"
+           type="com.example.myapplication6.PostModel" />
+   </data>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_userid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{postmodel.userId.toString()}"/>
+
+    <TextView
+        android:id="@+id/text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{postmodel.id.toString()}"/>
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{postmodel.title}"/>
+
+    <TextView
+        android:id="@+id/text_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{postmodel.body}"/>
+</LinearLayout>
+</layout>
